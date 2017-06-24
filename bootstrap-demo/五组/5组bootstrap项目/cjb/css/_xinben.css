@@ -1,0 +1,22 @@
+main{
+	position: relative;
+}
+.left_1_1{
+	background: #ffae00;
+	color: #fff;
+}
+.left_1>li{
+	cursor: pointer;
+}
+/*.col_0{
+	display:block;
+}*/
+.col_1{
+	display: none;
+}
+.col_2{
+	display: none;
+}
+.col_3{
+	display:block;
+}

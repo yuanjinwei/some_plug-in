@@ -1,0 +1,38 @@
+//
+//banner  样式
+header[role='banner']{
+    .banner-brand{
+    }
+    >.container{
+        position: relative;
+    }
+    .utility-nav{
+        position: absolute;
+        top: 40px;
+        right: 400px;
+        z-index: 999;
+        >ul{
+            list-style: none;
+            >li{
+                float: left;
+                >a{
+                    display: inline-block;
+//                  padding: 8px 12px;
+                    color: #eee;
+                    &:hover{
+                        text-decoration: none;
+                    }
+                    @media(max-width:(@grid-float-breakpoint - 1)){
+                        span{
+                            .sr-only();
+                        }
+                        .icon{
+                            font-size: 2em;
+                            line-height: 1.2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

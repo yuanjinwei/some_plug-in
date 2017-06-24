@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/my.css" />
+         <script src="js/jquery.min.js "></script>
+    <script type="text/javascript">
+	    if($(window).scrollTop()>150){
+			$('#scrollUp').fadeIn(400);
+	    }else{
+			$('#scrollUp').fadeOut(400);
+	    }
+    	$(window).scroll(function(){
+	    
+	    if($(window).scrollTop()>150){
+			$('#scrollUp').fadeIn(400);
+	    }else{
+			$('#scrollUp').fadeOut(400);
+	    }
+			
+	    	//设置文字垂直居中，谷歌浏览器加载图片的顺序问题，导致高度无法获取
+	    $(window).load(function () {
+			$('.text').eq(0).css('margin-top', ($('.auto').eq(0).height() - $('.text').eq(0).height()) / 2 + 'px');
+		});
+		
+	
+		$(window).resize(function () {
+			$('.text').eq(0).css('margin-top', ($('.auto').eq(0).height() - $('.text').eq(0).height()) / 2 + 'px');
+		});
+	
+		$(window).load(function () {
+			$('.text').eq(1).css('margin-top', ($('.auto').eq(1).height() - $('.text').eq(1).height()) / 2 + 'px');
+		});
+	
+		$(window).resize(function () {
+			$('.text').eq(1).css('margin-top', ($('.auto').eq(1).height() - $('.text').eq(1).height()) / 2 + 'px');
+		});
+    	})
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+    </head>
+    <body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<a href="index.html" class="navbar-brand hidden-xs" ><img src="images/logo (1).png" alt=""></a>
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		<div class="collapse navbar-collapse" id="navbar-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="line"><a href="index.html"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+				<li class="line"><a href="course.html"><span class="glyphicon glyphicon-headphones"></span> 课程</a></li>
+				<li class="line"><a href="show.html"><span class="glyphicon glyphicon-th-list"></span> 演示</a></li>
+				<li><a href="web.html"><span class="glyphicon glyphicon-question-sign"></span> 关于</a></li>
+			</ul>	
+		</div>
+	</div>
+</nav>
+<header class="title ">
+	<div class="container">
+		<hgroup>
+			<h1 class="side">关于</h1>
+			<h2 class="side">罗列各种大家关心或常用的问题！</h2>
+		</hgroup>
+	</div>
+</header>
+<div class="bread">
+	<ul class="breadcrumb container">
+		<li><a href="index.html">首页</a><span class="divider"></span></li>
+		<li class="active">关于</li>
+	</ul>
+</div>
+<div class="about" style="border-bottom:40px;">
+	<ul class="container list-unstyled max-bottom ">
+		<li>
+			<blockquote class="part1">
+				<h4>运营策略和方向</h4>
+				<p>瓢城web俱乐部成立于2009年，并于6月1号开始录制第一套视频教程。经过几年的探索，逐渐掌握了运营方式并且完成收支平衡。</p>
+				<p>"运营策略和方向为："
+					<strong>基础课程免费，扩展课程赞助</strong>"的运营模式"。
+				</p>
+			</blockquote>
+			<blockquote class="part2">
+				<h4>免费课程和赞助商</h4>
+				<p>"免费课程采用时时录制更新的方式发布，"<strong>在线版</strong>"和"<strong>下载版</strong></p>
+				<p>"在线版:：由"
+					<a href="###">土豆网</a>(本站内嵌)、
+					<a href="###">好知</a>"、"
+					<a href="###">51CTO学院</a>"、"
+					<a href="###">网易云课堂</a>"和"
+					<a href="###">百度文库</a>"提供"
+				</p>
+				<p>"在线版:：由"
+					<a href="###">土豆网</a>(本站内嵌)、
+					<a href="###">好知</a>"、"
+					<a href="###">51CTO学院</a>"、"
+					<a href="###">网易云课堂</a>"和"
+					<a href="###">百度文库</a>"提供"
+				</p>
+				<p>
+					赞助课程采用淘宝购买的方式发布，通过下载后机器绑定学习。目前支持winxp、win7和win8。
+				</p>
+				<p>
+					赞助类课程并非永久付费，是一种提前学习的特权服务。这种提前分几个阶段：<strong>赞助期</strong>"和"<strong>保护期</strong>。
+				</p>
+				<p>"赞助期:"
+					一般是2-3年+，这段期间，课程是销售阶段，需要购买学习。
+				</p>
+				<p> "保护期:"
+				            一般是2-3年+，这段期间，课程是销售阶段，需要购买学习。
+				</p>
+			</blockquote>
+			<blockquote class="part3">
+				<h4>课程文件格式</h4>
+				<p>EXE版:电驴首发的版本，声音和图像经过一定比例压缩，图像质量无差别，声音质量有所下降。</p>
+				<p>LXE版：母板格式（原版未压缩），可以使用屏幕录像专家（注册的没有水印）进行格式生成（比如：AVI,WMV等）。</p>
+				<p>AVI版：通用格式（未压缩），采用的是TechSmith Screen Capture Codec v3.0.0编码，推荐使用Camtasia Player播放器或者射手播放器（Linux推荐）。</p>
+			</blockquote>
+			<blockquote class="part1">
+				<h4>学习无法坚持怎么办？</h4>
+				<p>视频学习时经常犯困，或者注意力不集中会大大降低学习效率，最终导致学习效果不佳。到底是什么原因呢？</p>
+				<p>据不精确统计，有15%的学生可以顺利学完从初级到高级的课程。60%左右会在半山腰停顿或放弃，剩下的25%可能连初级都无法进行下去。</p>
+				<p>15%不是我们需要指导的对象，此类学生有强大的学习能力和适应力，可以自我建立适合自己的学习曲线，可以在困境中求生。</p>
+				<p>25%也不是我们需要指导的对象，此类学生在能力上缺乏太多断层，一般会建议换个行业试试，找到可以顺势而为的，逆天而行非常痛苦。</p>
+				<p>60%在初级阶段比较顺畅走来，而到了进阶或高级就发现遇到能力瓶颈，那么是哪些问题造成的？</p>
+				<p><strong>1.老师风格不适应或能力不足，</strong>解决方案：更换一个自己适应或者认为能力不错的老师，继续学习。</p>
+				<p><strong>2.课程学习计划安排不合理，</strong>解决方案：如果学习顺序问题，调整课程顺序即可；如果是计划太满，可以放慢学习周期。</p>
+				<p><strong>3.学习时间太短，内心浮躁，</strong>解决方案：很多人临时抱佛脚，和考前背书一般；而学技术这样没用，需要放弃一些东西，静心学。
+</p>
+				<p><strong>4.思维跟不上，总是不理解，</strong>解决方案：几遍之后还是不理解，先跳过继续往下学；不能因为一个中途绊脚石，而放弃后面一大片钻石。</p>
+				<p><strong>5.心理很疲惫，生理很劳累，</strong>解决方案：休息后再学，疲倦时学习更容易放弃；如果长期高压，必要时需要通过医生和药物帮助调理。</p>
+			</blockquote>
+			<blockquote class="part2">
+				<h4>制定适合自己的学习方式</h4>
+				<p>每个人的情况不同，每个人都有不同的学习方式。</p>
+				<p>天资高的，一点就通，无须带领，即能完成多款有创造力、生产力的产品；天资低的，基础来回巩固，项目带做了几个，还是无法做出产品。</p>
+				<p>这里只能提供一些个人建议，尽可能结合自身能力学到更多知识，提升更强的竞争力。</p>
+				<p>1.要有浓厚的兴趣热爱它，不能只为混口饭吃；否则学习力会大降，且工作无法带来乐趣。</p>
+				<p>2.做好长期或终生学习的准备，不能妄想短短几个月解决问题；IT技术革新很快，必须常年学习。</p>
+				<p>3.中庸天资的学生，在基础课程中，学一个知识点就停下来练习一遍。切不可当电影看过。</p>
+				<p>4.中庸天资的学生，在学习项目的时候，开始可以跟着做，理解一遍，独立做。最好整套学完，独立再做个。</p>
+				<p>5.最好别熬夜学习，很多人熬夜学习有感觉。那是因为，白天的诱惑太大。要努力培养白天静心的方法。</p>
+				<p>6.尽可能学百家课，这样可以增加自己对知识的判断力，包括正确性、合理性。</p>
+			</blockquote>
+			<blockquote class="part3">
+				<h4>怎么学习PHP第二季和第三季</h4>
+				<p>很多学生在学习PHP第二季和第三季的时候，发现难度突然加大，导致学习出现障碍。这里说明一些，怎么排除这些问题。</p>
+				<p>1.PHP第二季开章是<strong>面向对象基础</strong>，不少学生在这里就开始晕了。主要原因是由于面向过程的顺序思维尚未立刻转变过来。</p>
+				<p>解决方案：一共九课时，多听两遍；然后自己多写、多实践，尽可能的理解；实在不理解，可以先通过多写把语法记住；稍后的项目会加深理解。</p>
+				<p>2.PHP第二季中的<strong>TPL模版引擎</strong>很多学生到这里一下子蒙了。主要原因是由于这是初学者第一次遇到一个类似微型框架的东西。</p>
+				<p>解决方案：能听懂大概就可以了，不必要能写出来。听不懂也没关系，跟着写运行出来即可。到后面扩展一些功能，也没必要完全搞懂或独立写出。</p>
+				<p>3.PHP第二季中的<strong>三层架构</strong>模式，很多学生思维跟不上，逻辑理不清。主要原因是第一次用面向对象的分层思想去建立系统。</p>
+				<p>解决方案：第一次用面向对象和分层去做系统，思维没跟上很正常。不必纠结于此，先跟着写，项目中再体会。课程完毕后，用分层思想再独立开发一个系统即可。</p>
+				<p>4.PHP第二季中的<strong>静态缓存局部更新内容</strong>，类似于Ajax，而没用Ajax。很多人不理解，而且由于程序有些复杂导致出错。</p>
+				<p>解决方案：跟着写即可，无须关心太多，纠结太多。如果写错了，又调试不好，就放着不管即可。后面学到Ajax就轻松多了。</p>
+				<p>5.PHP第三季中的<strong>设计模式</strong>，有些设计模式相似，但又有点复杂。</p>
+				<p>解决方案：在Web系统中用不到那么多模式，基础课程中，如果有听不懂的设计模式，直接放弃即可，继续往后学，无伤大雅。</p>
+				<p>6.PHP第三季中的<strong>MVC设计模式</strong>，为了展现MVC的实现曲线，采用了从构想到实现的多次修改，但这会混乱学生思维。</p>
+				<p>解决方案：在实现MVC架构曲线的修改过程中，理解多少算多少。等到真正成型的时候，再停下来好好理解一下即可，理解多少算多少。</p>
+				<p>7.PHP第二季和第三季中的项目中，<strong>里面不同功能，重复知识较多</strong>，会有厌烦感。</p>
+				<p>解决方案：针对不需要重复强化的学生，如果遇到厌烦的重复，可以直接快进或者跳过，无伤大雅。</p>
+				<p>8.PHP第二季和第三季<strong>学习总结</strong>如何坚持学完？</p>
+				<p>实在不理解的：放弃，继续学；有重复厌烦的知识：直接跳过，继续学；核心理念：不能因为某个点而放弃后面一大片，直至放弃编码、放弃人生。</p>
+				<p>PHP第二季和第三季为了提高能力，所以偏向于基础性开发，难度会大。而工作中，都是基于某个框架，基于某个系统，会简单很多。</p>
+			</blockquote>
+			<blockquote class='part1'>
+				<h4>PHP第四季集大成，难度也不大</h4>
+				<p>很多同学在学习PHP第二季、第三季认为难度过大，用于实际工作时开发效率较低。原因是全部使用的原生，不但效率低，安全性不高，性能也不好。但上一条最后已经说明，</br>
+				PHP第二季和第三季讲解了PHP的基础，当你了解之后，学习力已经有所提高。</p>
+				<p>PHP第四季将采用框架进行开发，效率极高，安全性和性能都已经做了底层优化，让你只考虑业务逻辑。所以，在学习难度上对于二三季度，将大大降低。所以，及时你只有PHP二三
+				季度的40%或60%的功力，学习起来也是非常容易的。</p>
+				<p>PHP第四季不单单使用了PHP的框架，前台的前端使用了库，极大的释放了JS和UI的软肋，并且后台又使用的后台UI集合，完全释放后台控制的活力。而学习难度却没有加大，这就是
+				集大成的好处。</p>
+				<p>总结：在PHP第二季或第三季感觉有些难度或烦恼的同学，一定不要把PHP第四季想象的更难，恰恰相反，不但各项性能有所提升，学习难度又大大降低，千万不要错过。</p>
+			</blockquote>
+		</li>
+	</ul>
+</div>
+	<footer class="footer">
+	<div class="container">
+		<p>
+			合作邮箱:
+			<a href="###" style="padding:0 5px 0 0">yc60.com@gmail.com</a>咨询QQ：417775601 <a href="###"><img src="images/pic1.gif"/></a>
+			
+		</p>
+		<p>
+			<a href="###" style="color:#777;">苏ICP备14005868号-2.</a>© 2009-2016 瓢城Web俱乐部. Powered by"<a href="###">Bootsrap</a>"and"<a href="###">WordPress</a>"."
+		</p>
+	</div>
+	</footer>
+	<a id="scrollUp" href="#top" style="display: block;position: fixed;z-index:999 ;"></a>
+    </body>
+    <!--引入jquery.min.js文件必须在bootstrap.min.js的前面-->
+   
+   
+</html>

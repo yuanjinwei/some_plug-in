@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Page Not Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+        * {
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        html {
+            color: #888;
+            display: table;
+            font-family: sans-serif;
+            height: 100%;
+            text-align: center;
+            width: 100%;
+        }
+
+        body {
+            display: table-cell;
+            vertical-align: middle;
+            margin: 2em auto;
+            font-family: "Sacramento", Arial, serif;
+        }
+
+        h1{
+            color: #555;
+            font-size: 2em;
+            font-weight: 400;
+        }
+        p {
+            margin: 0 auto;
+            /*width: 280px;*/
+            line-height: 40px;
+        }
+
+        @media only screen and (max-width: 280px) {
+
+            body, p {
+                width: 95%;
+            }
+
+            h1 {
+                font-size: 1.5em;
+                margin: 0 0 0.3em;
+            }
+
+        }
+		p>span{
+			color: red;
+			font-size: 40px;
+		}
+		p>b{
+			/*color: red;*/
+			cursor: pointer;
+		}
+		p>b:hover{
+			color: red;
+		}
+    </style>
+    <script src="js/vendor/jquery-1.12.0.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+    <h1>404</h1>
+    <p>页面无法找到..........</p>
+    <p>对不起,此网站还在开发............</p>
+    <p><span class="num">3</span>秒后<b onclick="back()">返回</b></p>
+    <script type="text/javascript">
+		var num = 5;
+		var time = setInterval(function(){
+			if(num--==1){
+				clearInterval(time);
+				window.history.go(-1);
+			}
+			$(".num").html(num);
+		},1000);
+		function back(){
+			window.history.go(-1);
+			clearInterval(time);
+		}
+    </script>
+</body>
+</html>
+<!-- IE needs 512+ bytes: http://blogs.msdn.com/b/ieinternals/archive/2010/08/19/http-error-pages-in-internet-explorer.aspx -->

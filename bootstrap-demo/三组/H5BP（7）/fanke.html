@@ -1,0 +1,270 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>凡科免费注册</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="css/normalize.css">
+       <link rel="stylesheet" href="css/myself.css" />
+        <link rel="stylesheet" type="text/css" href="css/buttons.css"/>
+        <link rel="stylesheet" href="css/__main.css">
+        <!--<script src="js/vendor/jquery-1.12.0.min.js"></script>
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>-->
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script type="text/javascript" src="jquery-validation-1.16.0/dist/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="jquery-validation-1.16.0/dist/localization/messages_zh.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+        	
+       
+		  function change(){
+		    code=$("#code");
+		  //1、验证码组成库  0-9  a-z  A-Z
+		   var arrays=new Array( 
+		       '1','2','3','4','5','6','7','8','9','0',
+		       'a','b','c','d','e','f','g','h','i','j', 
+		       'k','l','m','n','o','p','q','r','s','t', 
+		       'u','v','w','x','y','z', 
+		       'A','B','C','D','E','F','G','H','I','J', 
+		       'K','L','M','N','O','P','Q','R','S','T', 
+		       'U','V','W','X','Y','Z'        
+		       ); 
+		   //2、重新初始化验证码
+		    codes='';
+		   for(var i=0; i<5; i++){
+		   //3、随机获取一个数组的下标
+		   var r=parseInt(Math.random()*arrays.length);
+		   codes+=arrays[r];
+		  }
+		  // 4、验证码添加到input里
+		     code.val(codes);
+		  }
+		  change();
+		 code.click(change);
+		 //5、单击验证
+		  $("#check").click(function(){
+		  	//6、取得输入的验证码并转化为大写
+		    var inputCode = $("#input").val().toUpperCase();  
+		   console.log(inputCode);
+		   //7、若输入的验证码长度为0
+		  if(inputCode.length == 0) { 
+		  	//8、则弹出请输入验证码
+		   alert("验证码为空，请输入验证码！"); 
+		  } 
+		  //9、若输入的验证码与产生的验证码不一致时   
+		  else if(inputCode!=codes.toUpperCase()) {
+		  //10、则弹出验证码输入错误 
+		   alert("验证码输入错误!请重新输入"); 
+		   //11、刷新验证码
+		   change();
+		   //12、清空文本框
+		   //$("#input").val("");
+		  }else { 
+		  	//13、输入正确时
+		   alert("输入正确"); //弹出^-^
+		  } 
+		  });
+		  
+		  //图标移入移出事件
+		  	$(document).ready(function(){
+				//鼠标移入移出事件
+				//微信
+				var wechatimg = $('.bg-img-tzl5');
+				wechatimg.mouseover(function(){
+				  	$('.hidden-one').css('display','block');
+				});
+				wechatimg.mouseout(function(){
+				  	$('.hidden-one').css('display','none');
+				});	
+				//电话
+				var callimg = $('.bg-img-tzl1');
+				callimg.mouseover(function(){
+				  	$('.hidden-two').css('display','block');
+				});
+				callimg.mouseout(function(){
+				  	$('.hidden-two').css('display','none');
+				});
+				//分享
+				var showimg = $('.bg-img-tzl2');
+				showimg.mouseover(function(){
+				  	$('.hidden-three').css('display','block');
+				});
+				showimg.mouseout(function(){
+				  	$('.hidden-three').css('display','none');
+				});
+			});
+			
+		//表单验证
+		$('#demoform').validate({
+				rules:{
+					user:{
+						required: true,
+		        		maxlength: 20,
+		        		telephone1:true		        		
+					},
+					password:{
+						required: true,
+	       				minlength: 5,
+	        			checkpassword:true
+					},
+					//定义错误信息
+					messages:{
+						 username: {
+        					required: "请输入手机号或邮箱",
+        					maxlength: ""
+                    },
+      				password: {
+      						required: "请输入密码",
+        					minlength: "密码不能少于 5 个"
+                    },
+					}
+				}
+		});
+		//手机号和用户名
+		$.validator.addMethod("telephone1", function(value, element, param){  
+		    var  telephone1 = /^(13[0-9]{9})|(18[0-9]{9})|(14[0-9]{9})|(17[0-9]{9})|(15[0-9]{9})$|\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+		    return this.optional(element)||telephone1.test(value);
+		}, "手机号码或者邮箱不正确");
+		//密码
+		$.validator.addMethod("checkpassword", function(value, element, param){  
+		    var  checkpassword = /^[A-Za-z0-9]+$|^[A-Za-z0-9]{4,40}$/;
+		    return this.optional(element)||checkpassword.test(value);
+	
+		}, "不能输入汉字");
+		 		 
+		 //侧边图片出现消失
+		 $('.asideImg').mouseover(function(){
+		 	console.log('侧边已入测试');
+		 	$('aside').css('right','149px');
+		 });
+		 $('.asideImg').mouseout(function(){
+		 	$('aside').css('right','0px');
+		 	console.log('侧边移除测试');
+		 });
+		 });
+</script>
+    </head>
+    <body>
+		<header role="banner">
+			<div class="container">
+        		<a class="banner-brand visible-md visible-lg" href="index.html"><img src="img/logoNew.jpg" alt="" width="131"/></a>
+        		<!--class="utility-nav"自己写-->
+        		<div class="utility-nav">
+	              <p><a class="btn btn-primary pull-left" href="#">免费注册</a></p>
+	              <p><a class="btn btn-default pull-right" href="#">登录</a></p>
+	            </div>
+        	</div>  
+		</header>
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header visible-md visible-lg">
+					<a class="navbar-brand" href="#"><div class="nav-web-num">我们已累计为<strong><span>13,210,668</span>个网站</strong>提供服务</div></a>
+				</div>
+				<!--微信微博的那五个图标-->
+				<div class="fiveIcon">
+					<ul>
+						<li>
+							<div class="bg-img-tzl5"></div>
+							<div class="hidden-one"></div>
+						</li>
+						<li>
+							<div class="bg-img-tzl1"></div>
+							<div class="hidden-two">服务热线：4006-099-500</div>
+						</li>
+						<li>
+							<div class=" bg-img-tzl2"></div>
+							 <img src="img/share.png" class="hidden-three"/>
+						</li>
+						<li>
+							<div class=" bg-img-tzl3"></div>
+						</li>
+						<li>
+							<div class=" bg-img-tzl4"></div>
+						</li>
+					</ul>
+				</div>
+				<div class="tzl-banner">
+					<img src="img/bannerReg2.jpg"  class="img-responsive"/> 	
+				</div>
+			</div>
+		</nav>
+		<main>
+			<div class="container">
+				<form role="form" id="demoform">
+					<div>
+						手机号码/邮箱：<input type="text" class="form-tzl" id="user" name='user'/>
+						<span class="tzl-color">*</span>请输入手机号码或邮箱
+					</div>
+					<div>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;验证码：<input type="text" class="form-tzl1"/><input type="button" id="code" >
+					</div>
+					<div>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密码：<input type="password" class="form-tzl tzl-left" id="password" name="password"/><span class="tzl-color">*</span>4-12个字符，区分大小写
+					</div>
+					<div class="tzl-do">
+						<ul class="options-list options-categories">
+							  <li class="list-unstyled"><a>网站用途：</a></li>
+					          <li class="list-unstyled"><input type="radio" name="toDo">企业/组织官网</input></li>
+					          <li class="list-unstyled"><input type="radio" name="toDo">推广产品</input></li>
+					          <li class="list-unstyled"><input type="radio" name="toDo">在线商城</input></li>
+					          <li class="list-unstyled"><input type="radio" name="toDo">发布信息</input></li>
+					          <li class="list-unstyled"><input type="radio" name="toDo">个人网站</input></li>
+					          <li class="list-unstyled"><input type="radio" name="toDo">其他</input></li>
+					  	</ul>
+					</div>
+					<br />
+					<div class="tzl-do">
+						<ul class="options-list options-categories">
+							  <li class="list-unstyled"><a>从何处知道我们：</a></li>
+					          <li class="list-unstyled"><input type="radio" name="source-tzl">朋友介绍</input></li>
+					          <li class="list-unstyled"><input type="radio" name="source-tzl">看到别人再用</input></li>
+					          <li class="list-unstyled"><input type="radio" name="source-tzl">我是老客户</input></li>
+					          <li class="list-unstyled"><input type="radio" name="source-tzl">广告</input></li>
+					          <li class="list-unstyled"><input type="radio" name="source-tzl">其他</input></li>
+					  	</ul>
+					</div>
+					<br />
+					<div>
+						<span class="tzl-rule"><input type="checkbox">我同意“服务条框”及“法律声明”</span>
+					</div>
+					<button type="submit" class="free-login" id="check">免费注册</button>
+					<div>
+						<p class="tzl-gologin">我已注册，直接<a>登录</a></p>
+					</div>
+				</form>
+			</div>
+			<div class="empty"></div>
+		</main>
+		<aside>
+			<div class="asideImg">
+				<img src="img/serviceBox4.png" />
+			</div>
+		</aside>
+		<footer  class="footer navbar-fixed-bottom">
+			<div class="tzl-footer container">
+				<p class="p-first">
+					<a>关于凡科</a>
+					<a>帮助中心</a>
+					<a>支付方式</a>
+					<a> 服务条款</a>
+					<a>法律声明</a>
+					<a>推广客户</a>
+					<a>省市建站</a>
+					<a>自助建站</a>
+					<a>网站建设</a>
+					<a>网站</a>
+				</p>
+				<p class="p-second" >
+					<img src="img/beianIcon.png">粤公网安备 44010502000252号 | Copyright © 2010-2017 广州凡科互联网科技股份有限公司 粤ICP备10235580号 股票代码：832828
+				</p>
+				<div><a><img src="img/iTrust.jpg"></a></div>
+			</div>
+		</footer>
+    </body>
+</html>
+

@@ -1,0 +1,46 @@
+/*
+* @Author: lamco
+* @Date:   2017-05-14 14:11:59
+* @Last Modified by:   lamco
+* @Last Modified time: 2017-05-14 16:32:04
+*/
+ #ul_1:hover{
+	background: #81a849;
+}
+#ul_1:hover>.news_left>a{
+	color: #fff;
+}
+#ul_1:hover>.news_left>p{
+	color: #fff;
+}
+ .more{
+ 	display: block;
+ 	height: 57px;
+ 	width: 57px;
+ 	background: url('../images/more.png') no-repeat;
+ 	text-align: center;
+ 	margin: 0 auto;
+ 	margin-bottom: 5px;
+ 	padding-top: 20px;
+
+
+ }
+
+ footer{
+	background: url('../images/fonter_bg.png') ;
+
+} 
+.footer-lie{
+
+}
+.menu{
+	
+	width: 80px;
+	padding: 0px;
+	list-style: none;
+	display: none;
+}
+.menu>li>a{
+		color: #666;
+		text-decoration: none;
+}

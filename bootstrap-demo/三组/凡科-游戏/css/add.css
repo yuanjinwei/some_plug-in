@@ -1,0 +1,60 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.all{
+	font-size: 20px;
+	color: #2598ED;
+	line-height: 30px;
+}
+.row>section>p{
+	width: 190px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background-color: #ccc;
+}
+.bgImg{
+	position: absolute;
+	top: 0px;
+	width: 190px;
+	height: 340px;
+}
+.bgImg>.block{	
+	width: 140px;
+	height: 150px;
+	background-color: #fff;
+	position: absolute;
+	top: 75px;
+	left: 30px;
+	opacity: 0;
+}
+.block>p{
+	width: 140px;
+	height: 30px;
+	line-height: 30px;
+	margin-top: 15px;
+	text-align: center;
+	border-top: 1px solid #ccc;
+}
+.bgImg>.block>img{
+	margin-left: 5px;
+	margin-top: 5px;
+}
+.bgImg:hover{
+	background: rgba(0,0,0,.5);
+}
+.bgImg:hover>.block{
+	opacity: 1;
+}
+.save p{
+	font-style: 14px;
+	margin-top: 20px;
+	text-align: center;
+}
+.aboutFK ul{	
+	border-right: 1px solid #ccc;
+}
+.friendLink ul{
+	border-right: 1px solid #ccc;
+}

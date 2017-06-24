@@ -1,0 +1,94 @@
+*{margin: 0 auto;box-sizing: border-box;}
+a{color: rgba(255, 255, 255, 0.9);text-decoration: none;}
+a:hover{cursor: pointer;color: rgba(255, 255, 255, 1);text-decoration: none;}
+header .adcenter{
+    height: 90px;
+}
+body{
+    background: #ececec;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+    display: block;
+    .page{
+        max-width:1200px ;
+        position: relative;
+        background-color:white ;
+//      overflow-x: hidden;
+        width: 100%;
+        height: 100%;
+        transition: 0.5s;
+        .section>.container>.row>.col-md-8>p{
+            margin-bottom: 80px;
+        }
+        .fadeInleft .f-copy{
+            width:80%;
+            float: left;}
+        .section>.container>.row .icon{
+            width: 20%;
+            float: left;
+            font-size: 50px;
+            color: red;
+            font-weight: initial;
+        }
+        @media (min-width: 992px){
+            #nav{
+                  display: none;
+              }
+            .section{
+                h2{
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                    line-height: 1.5;
+                }
+                padding-top:112px ;
+                padding-bottom: 112px;
+                .col-md-7{
+                   overflow: hidden;
+                }
+                img:nth-child(1){
+                    margin-top: 50px;
+                }
+                .feature-left{
+                    margin-top: 30px;
+                }
+            }
+          }
+        .gtco-cor{
+            background: rgba(0,0,0,0.6);
+        }
+        #logo{font-weight: bold;font-size: 20px;margin-top: 30px   ;}
+        em{color: red;font-weight: bold;}
+        .page_inner{
+            overflow: hidden;
+            height: 600px;
+            background-color: #fdd035;
+            opacity: 0.8;
+            background: url(../img/img_1.jpg) center;
+            background-size: cover;
+            background-position: top center;
+            background-repeat: no-repeat;
+            position: relative;
+            .navbar-collapse{
+                margin-top: -35px;
+            }
+            #logo>li>a:hover,#color>li>a:hover{
+                background: transparent;
+            }
+            ul{
+                li:hover{
+                    background: transparent;
+                    color: rgba(255, 255, 255, 1);
+                }
+            }
+            .active{
+                border-radius: 5px;
+                border: 3px solid #fff;
+                background: transparent;
+            }
+        }
+    }
+
+}
+

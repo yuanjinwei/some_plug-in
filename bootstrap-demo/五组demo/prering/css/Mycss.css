@@ -1,0 +1,416 @@
+ul li{
+	list-style: none;
+}
+#bg{
+	background: url(../img/img_6.jpg) no-repeat;
+	height: 600px;
+	background-size: cover;
+	position: relative;
+	background-position: top center;
+}
+.page{
+	background:black;
+	opacity:0.5;
+	height: 600px;
+	z-index:1;
+	position: absolute;
+	top:0;
+	left:0;
+	right: 0;
+}
+@media (max-width:768px){
+	#bg{
+		height: 400px !important;
+	}
+	.page{
+		
+		height: 400px !important;
+	}
+}
+#logo{
+	font-size: 20px;
+	margin-top: 20px;
+	margin-left: 5%;
+	padding: 0;
+	font-weight: bold;
+	color: #fff;
+	width: 100px;
+}
+
+.navbar{
+	z-index:2;
+}
+#nav_ul{
+	padding: 0;
+    margin: 2px 0 0 0;
+    margin-left:200px;
+}
+#nav_ul>li a{
+	font-size: 16px;
+	color: rgba(255, 255, 255, 0.7);
+	padding: 30px 10px;
+}
+#nav_ul>li a span{
+	border: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 8px 20px;
+    color: #fff;
+    display: inline-block;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    border-radius: 7px;
+    margin-top:-20px;
+}
+#nav_ul>li a span:hover {
+	background-color: #fff;
+	color: red;
+}
+#nav_ul>li{
+	padding: 0;
+    margin: 0;
+    list-style: none;
+    display: inline;
+}
+.conter{
+	text-align: center;
+	margin-top: 100px;
+}
+.conter p{
+	margin-top: 30px;
+	font-size: 16px;
+	line-height: 1.5;
+	color: #aaa;
+}
+@media (max-width: 768px) {
+	.conter h2{
+		font-size: 26px;
+	}
+}
+h3{
+	color: red;
+}
+p{
+	color: #777;
+}
+#Subscribe h2{
+	padding-top: 80px;
+	color: #fff;
+	font-size: 30px;
+	line-height: 1.5;
+	font-weight: 300;
+}
+#Subscribe p{
+	color: rgba(255,255,255,0.5);
+	font-size: 20px;
+}
+.fb{
+	height: 300px;
+	background: #0098ef;
+	height: 400px;
+}
+.input{
+	margin-top: 50px;
+	margin-bottom: 100px;
+}
+.ipt{
+	background: transparent;
+	color: #fff;
+	font-size: 16px;
+	border: 2px solid rgba(255,255,255,0.2);
+	transition: 0.5s;
+	height: 46px;
+}
+.red{
+	background: #f00;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 400;
+	height: 46px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+.red:hover{
+	background: #f00;
+	color: #fff;
+}
+@media  (max-width:768px ) {
+	.red{
+		margin-top: 20px;
+	}
+}
+.fh3{
+	color: #000;
+	margin:0 0 15px 0;
+	/*margin-bottom: 15px;*/
+	font-weight: bold;
+	font-size: 15px;
+	letter-spacing: 2px;
+}
+.pp{
+	/*margin-bottom: 20px;*/
+	margin: 0 0 30px;
+	line-height: 1.7;
+	color: #777;
+	font-size: 16px;
+}
+/*.zuo{
+	padding-left: 80px;
+	padding-right: 15px;
+	text-align: left;
+	margin-right: 81px;
+}*/
+@media(max-width: 995px) {
+	.zuo {
+		padding-left: 13px;
+	}
+}
+#you{
+	padding: 0;
+    margin: 0 0 20px 0;
+    float: left;
+    width: 100%;
+}
+#you>li{
+	padding: 0;
+    margin: 0 0 15px 0;
+    list-style: none;
+    line-height: 1;
+    color: red;
+}
+#you>li span{
+	width: 30px;
+    float: left;
+    font-size: 18px;
+    position: relative;
+    display: -moz-inline-stack;
+    display: inline-block;  
+}
+.fa_1{
+	transform: rotateY(180deg);
+	margin:0 14px 0 -15px;
+}
+.footer .container{
+	padding-top: 7em;
+}
+.margin{
+	margin-bottom: 40px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.margin>p{
+	margin-top: 20px;
+	line-height: 2;
+}
+.shier{
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+.foot{
+	border-top: 1px solid #f2f2f2;
+    margin-top:3em;
+    padding-top:3em;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.row_1{
+	padding-bottom: 7em;
+}
+.navbar-toggle:hover span:nth-child(2) {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+.body {
+	z-index: 999;
+	width: 100%;
+	height: 1300px;
+	overflow: hidden;
+}
+.bodyBG {
+	background-color: #E6E6E6;
+}
+.r{
+	color: red;
+}
+.footer_ul{
+	width: 100%;
+	margin-right: 5%;
+	text-align: right;
+}
+.footer_ul li{
+	display: inline-block;
+	margin-left: 15px;
+	color: #f00;
+}
+.font{
+	margin-top: 236px;
+	margin-bottom: 50px;
+	text-align: left;
+	margin-left: 5%;
+	color: #fff;
+}
+.font>h1{
+	font-size: 59px;
+	line-height: 1;
+	font-weight: bold;
+}
+.font>p{
+	color: #fff;
+	opacity: 0.5;
+}
+@media only screen and (max-width: 768px) {
+	.font>h1{
+		font-size: 30px;
+	}
+	.font>p{
+	}
+}
+@media only screen and (max-width: 480px) {
+	.font>h1{
+		font-size: 30px;
+		text-align: center;
+		position: absolute;
+		bottom:30px;
+	}
+	.font>p{
+		text-align: center;
+		position: absolute;
+		bottom: 70px;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.footer_ul{
+		text-align: center;
+		margin-top: 30px;
+	}
+	.moban{
+		text-align: center;
+	}
+}
+.moban p{
+	margin:0;
+	color: #b3b3b3;
+	font-size: 16px;
+}
+#nav {
+	position: absolute;
+	width: 270px;
+	background-color: #000;
+	height: 100%;
+	top: 0;
+	right: -270px;
+	padding: 45px 40px 40px 40px;
+	display: none;
+	z-index:999;
+	margin-top:90px;
+}
+#nav>a {
+	font-size: 30px;
+	position: absolute;
+	right: 20px;
+	top: 0;
+	cursor: pointer;
+}
+#nav a {
+	color: #999;
+	text-decoration: none;
+}
+#nav a:hover{
+	color:#fff;
+}
+#nav li {
+	padding-top: 10px;
+}
+ #hover ul{
+	display: none;
+	position: absolute;
+	left: -12px;
+	background-color: #fff;
+	text-align: center;
+	width:145px;
+	padding: 0px;
+	border-radius: 15px;
+	line-height: 40px;
+}
+ #hover ul li a{
+ 	color:#999;
+ 	text-decoration: none;
+ }
+ #hover:hover ul {
+	display: block;
+}
+#hover ul li a:hover {
+	color:red;
+}
+.hover_1 ul{
+	margin-left: -25px;
+	display: none;
+}
+.hover_1:hover ul {
+	display: block;
+}
+.nav-container {
+	width: 1100px;
+	position: relative;
+	margin: 0 auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.wow h2{
+	color: black;
+}
+
+
+#mynav {
+		width: 750px;
+		position: absolute;		
+    }
+#mynav a{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+@media (min-width: 776px) {
+	#mynav {
+		width: 765px;
+		position: absolute;		
+    }
+	#mynav #nav_ul{
+		padding-left: 170px;
+	}
+}
+@media (min-width: 900px) {
+	#mynav {
+		width: 887px;
+		position: absolute;		
+    }
+	#mynav #nav_ul{
+		padding-left: 298px;
+	}
+}
+@media (min-width: 993px) {
+	#mynav {
+		width: 938px;
+		position: absolute;		
+    }
+	#mynav #nav_ul{
+		padding-left: 345px;
+	}
+}
+@media (min-width: 1100px) {
+	#mynav {
+		width: 1050px;
+		position: absolute;		
+    }
+	#mynav #nav_ul{
+		padding-left: 460px;
+	}
+}
+@media (min-width: 1200px) {
+	#mynav {
+		width: 850px;
+		position: absolute;		
+    }
+	#mynav #nav_ul{
+		padding-left: 260px;
+	}
+}
+

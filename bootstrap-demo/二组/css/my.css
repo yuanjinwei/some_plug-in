@@ -1,0 +1,186 @@
+body{
+	height: 2000px;
+}
+.navbar {
+    position: relative;
+    min-height:40px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    box-shadow: 0 1px 10px rgba(0,0,0,0.1);
+}
+.navbar-brand {
+    padding: 10px 10px;
+}
+.navbar-brand {
+     height: 40px; 
+}
+.navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.navbar-default .navbar-collapse{
+    border: none;
+}
+.navbar-fixed-top {
+    position: fixed !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 99;
+}
+.title h1 {
+    font-size: 35px;
+    line-height: 1.2;
+    color: #c90;
+    text-shadow: 2px 2px 1px #ccc;
+}
+.title h2 {
+    font-size: 15px;
+    line-height: 1.25;
+    margin-bottom: 20px;
+    color: rgb(204, 153, 0);
+    text-shadow: rgb(204, 204, 204) 1px 1px 0px;
+    font-weight: 300;
+    font-family: 黑体;
+}
+.title{
+	background: url("../images/bg.png");
+	padding: 40px 0;
+	margin-top: 30px;
+}
+
+/*//首页 关于*/
+p {
+    margin: 0px;
+}
+.bread {
+    background: #f5f5f5;
+    margin-bottom: 40px;
+}
+.about{
+	color:#444;
+}
+.about p{
+	line-height: 200%;
+	font-size: 14px;
+}
+.max-bottom{
+	margin-bottom: 40px;
+}
+/*第一部分*/
+.about blockquote.part1{
+	background-color: #FAF8F0;
+    border-color: #FAEBCC;
+}
+.about blockquote.part1 h4{
+	color:#8A6D3B;
+}
+.about blockquote {
+	font-weight: 300;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
+blockquote {
+    padding: 0 0 0 15px;
+    margin: 0 0 20px;
+    border-left: 5px solid #eee;
+}
+li{
+	line-height: 20px;
+}
+/*第二部分*/
+.about blockquote.part2{
+    background-color: #FDF7F7;
+    border-color: #EED3D7;
+}
+.about blockquote.part2 h4{
+    color:#B94A48;
+}
+.about>ul>>li>p {
+	/*margin: 0 0 10px;*/
+    font-size: 14px;
+    line-height: 200%;
+}
+/*第三部分*/
+.about blockquote.part3{
+    background-color: #F4F8FA;
+    border-color: #BCE8F1;
+}
+.about blockquote.part3 h4{
+	color:#BCE8F1;
+	font-size: 17px;
+}
+/*尾部部分*/
+.footer {
+    text-align: center;
+    padding:30px 0;
+    border-top: 1px solid #e5e5e5;
+    background-color: #f5f5f5;
+}
+/*滚动*/
+#scrollUp{
+    bottom: 20px;
+    right: 20px;
+    height: 38px;
+    width: 38px;
+    background: url("../images/top.png") no-repeat;
+}
+/* 小屏幕等屏幕（桌面显示器，大于等于768px） */
+@media (min-width: 768px){
+	.title{
+		padding: 0 20px;
+	}
+	.title h1{
+		font-size: 35px;
+	}
+	.title h2{
+		font-size: 15px;
+	}
+	.line{
+		background: url(../images/line.png) no-repeat right;
+	}
+	.navbar-nav>li>a {
+	    font-weight: inherit;
+	}
+}
+
+/* 中等屏幕（桌面显示器，大于等于992px） */
+@media (min-width: 992px) {
+	.title{
+		padding: 0 20px;
+	}
+	.title h1{
+		font-size: 38px;
+	}
+	.title h2{
+		font-size: 20px;
+	}
+	.line{
+		background: url(../images/line.png) no-repeat right;
+	}
+	.navbar-nav>li>a {
+	    font-weight: inherit;
+	}
+}
+
+/* 大屏幕（大桌面显示器，大于等于1200px） */
+@media (min-width: 1200px) {
+	.title{
+		padding: 40px 0;
+	}
+	.title h1{
+		font-size: 65px;
+	}
+	.title h2{
+		font-size: 25px;
+	}
+	.line{
+		background: url(../images/line.png) no-repeat right;
+	}
+	.navbar-nav>li>a {
+	    font-weight: inherit;
+	}
+}

@@ -1,0 +1,39 @@
+
+header[role="banner"]{
+  .banner-brand{
+      padding-top:10px;
+  }
+  >.container{
+   position:relative;
+  }
+  .utility-nav{
+   position:absolute;
+   top:0;
+   right:20px;
+   z-index:999;
+   >ul{
+   list-style:none;
+     >li{
+     float:left;
+     >a{
+      display:inline-block;
+      padding: 8px 12px;
+      //更改右上角文字的颜色。
+      color: green;
+      &:hover{
+      text-decoration:none;
+          }
+        @media(max-width:(@grid-float-breakpoint - 1)){
+        span{
+        .sr-only();
+          }
+        .icon{
+         font-size:2em;
+         line-heigth:1.2;
+         }
+        }
+        }
+      }
+    }
+  }
+}

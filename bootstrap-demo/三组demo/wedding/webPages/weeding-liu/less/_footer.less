@@ -1,0 +1,41 @@
+footer[role="contentinfo"]{
+    padding-top: 24px;
+    padding-bottom: 36px;
+    text-align: center;
+    .fh5co-social-icons{
+        list-style: none;
+    }
+    small{
+        display: block;
+        >a{
+            color: #F14E95;
+        }
+    }
+}
+
+ul.social{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    > li {
+       display: inline-block;
+       > a {
+           transition: 1s;
+           display: inline-block;
+           font-size: 18px;
+           line-height: 30px;
+           .square(30px);
+           border-radius: 36px;
+//         background: @gray-light;
+           color: #F14E95;
+           margin: 0 3px 3px 0;
+           &:hover{
+               transition: 1s;
+               text-decoration: none;
+               background: #F14E95;
+               color: #ffffff;
+           }
+       } 
+    }
+}
