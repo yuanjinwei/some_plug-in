@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>canvas { width: 100%; height: 100% }</style>
+    <script src="js/three.js"></script>
+</head>
+<body>
+    <script>
+		//  三大组建
+		//
+		//在Three.js中，要渲染物体到网页中，我们需要3个组建：场景（scene）、相机（camera）和渲染器（renderer）。有了这三样东西，才能将物体渲染到网页中去。
+		//
+		//记住关建语句：有了这三样东西，我们才能够使用相机将场景渲染到网页上去。
+		//在Threejs中场景就只有一种，用THREE.Scene来表示，
+		//要构件一个场景也很简单，只要new一个对象就可以了
+        var scene = new THREE.Scene();
+		//另一个组建是相机，相机决定了场景中那个角度的景色会显示出来。
+		//相机就像人的眼睛一样，人站在不同位置，抬头或者低头都能够看到不同的景色。
+		//场景只有一种，但是相机却又很多种。和现实中一样，
+		//不同的相机确定了呈相的各个方面。比如有的相机适合人像，
+		//有的相机适合风景，专业的摄影师根据实际用途不一样，
+		//选择不同的相机。对程序员来说，
+		//只要设置不同的相机参数，就能够让相机产生不一样的效果。
+			//设置相机
+            	//此处为设置透视投影的相机，默认情况下，相机的上方向为Y轴，右方向为X轴，
+                //沿着Z轴垂直朝里（视野角：fov； 纵横比：aspect；
+                //	相机离视最近的距离：near； 相机离视体积最远距离：far）
+        var camera = new THREE.PerspectiveCamera(100, window.innerWidth/window.innerHeight, 0.1, 1000);
+		//最后一步就是设置渲染器，渲染器决定了渲染的结果应该画在页面的什么元素上面，
+		//并且以怎样的方式来绘制。
+		//注意，渲染器renderer的domElement元素，表示渲染器中的画布，
+		//所有的渲染都是画在domElement上的，
+		//所以这里的appendChild表示将这个domElement挂接在body下面，
+		//这样渲染的结果就能够在页面中显示了。
+		//antialias : true
+        var renderer = new THREE.WebGLRenderer({antialias : true,precision:"highp"
+        //precision:highp/mediump/lowp着色精度选择
+        });
+		//设置渲染器的大小为窗口的内宽度,也就是内容区的宽度
+        renderer.setSize(window.innerWidth, window.innerHeight);
+//      渲染器颜色
+//		renderer.setClearColor(0xFFFFFF, 1.0);
+        document.body.appendChild(renderer.domElement);
+        //代码中出现了THREE.CubeGeometry，THREE.CubeGeometry是什么东东，他是一个几何体
+        var geometry = new THREE.CubeGeometry(1,2,2);
+        //var geometry = new THREE.SphereGeometry(50,16,16);
+        //材质设定
+        var material = new THREE.MeshBasicMaterial({color: 0xccff00});
+
+        //mesh是three.js的一个类
+        var cube = new THREE.Mesh(geometry, material); scene.add(cube);
+		// 先来第一个position属性，可以设置xyz。
+		camera.position.set(0,0,5);
+		camera.up.x = 0;//设置相机的上为「x」轴方向
+        camera.up.y = 0;//设置相机的上为「y」轴方向
+        camera.up.z = 1;//设置相机的上为「z」轴方向
+        camera.lookAt( {x:0, y:0, z:0 } );//设置视野的中心坐标
+        //camera.position.z = 5;
+        function render() {
+        	//用requestAnimationFrame（）不断的绘制
+            requestAnimationFrame(render);
+            //这里就在设置cube的x方向上和y方向上rotation（旋转）
+            //cube.rotation.x +=Math.PI/180;
+            cube.rotation.y +=Math.PI/180;
+        // 渲染应该使用渲染器，结合相机和场景来得到结果画面。实现这个功能的函数是
+		//renderer.render(scene, camera);
+            renderer.render(scene, camera);
+        }
+        render();
+    </script>
+</body>
+</html>

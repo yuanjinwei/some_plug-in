@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图形集合</title>
+    <style>
+        *{
+            padding : 0;
+            margin : 0;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+        div{
+            width: 33%;
+            height: 50%;
+            float: left;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div id="box1"></div>
+<div id="box2"></div>
+<div id="box3"></div>
+<div id="box4"></div>
+<div id="box5"></div>
+<div id="box6"></div>
+<script src="echarts.min.js"></script>
+<script>
+    function $(id){
+        return document.getElementById(id);
+    }
+    //柱形图
+    var myChart1 = echarts.init($('box1'));
+    myChart1.setOption({
+        title: {
+            text: '柱形图'
+        },
+        tooltip: {},
+        legend: {
+            data:['销量']
+        },
+        xAxis: {
+            data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+        },
+        yAxis: {},
+        series: [{
+            name: '销量',
+            type: 'bar',
+            data: [5, 20, 36, 10, 10, 20]
+        }]
+    });
+
+    //折线图
+    var myChart2 = echarts.init($('box2'));
+    myChart2.setOption({
+        title: {
+            text: '折线图'
+        },
+        tooltip: {},
+        legend: {
+            data:['销量']
+        },
+        xAxis: {
+            data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+        },
+        yAxis: {},
+        series: [{
+            name: '销量',
+            type: 'line',
+            data: [5, 20, 36, 10, 10, 20]
+        }]
+    });
+
+    //折线图(平滑)
+    var myChart3 = echarts.init($('box3'));
+    myChart3.setOption({
+        title: {
+            text: '折线图(平滑)'
+        },
+        tooltip: {},
+        legend: {
+            data:['销量']
+        },
+        xAxis: {
+            data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+        },
+        yAxis: {},
+        series: [{
+            name: '销量',
+            type: 'line',
+            smooth: true,
+            data: [5, 20, 36, 10, 10, 20]
+        }]
+    });
+
+    //饼图
+    var myChart4 = echarts.init($('box4'));
+    myChart4.setOption({
+        title: {
+            text: '饼图'
+        },
+        tooltip: {},
+        legend: {
+            data:['销量']
+        },
+        series: [{
+            name: '销量',
+            type: 'pie',
+            data: [
+                {value : 5, name : "衬衫"},
+                {value : 20, name : "羊毛衫"},
+                {value : 36, name : "雪纺衫"},
+                {value : 10, name : "裤子"},
+                {value : 10, name : "高跟鞋"},
+                {value : 20, name : "袜子"}
+            ]
+        }]
+    });
+
+    //饼图
+    var myChart5 = echarts.init($('box5'));
+    myChart5.setOption({
+        title: {
+            text: '饼图'
+        },
+        tooltip: {},
+        legend: {
+            data:['销量']
+        },
+        series: [{
+            name: '销量',
+            type: 'pie',
+            radius: ['45%', '75%'],
+            data: [
+                {value : 5, name : "衬衫"},
+                {value : 20, name : "羊毛衫"},
+                {value : 36, name : "雪纺衫"},
+                {value : 10, name : "裤子"},
+                {value : 10, name : "高跟鞋"},
+                {value : 20, name : "袜子"}
+            ]
+        }]
+    });
+
+    //柱形图
+    var myChart6 = echarts.init($('box6'));
+    myChart6.setOption({
+        title: {
+            text: '大杂烩'
+        },
+        tooltip: {},
+        legend: {
+            data:['销量柱形图','销量折线图','销量饼图',]
+        },
+        xAxis: {
+            data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+        },
+        yAxis: {},
+        series: [{
+            name: '销量柱形图',
+            type: 'bar',
+            data: [5, 20, 36, 10, 10, 20],
+            itemStyle: {
+                normal: {
+                    opacity: 0.5,
+                },
+            },
+        },{
+            name: '销量折线图',
+            type: 'line',
+            data: [5, 20, 36, 10, 10, 20]
+        },{
+            name: '销量饼图',
+            type: 'pie',
+            radius: ['45%', '75%'],
+            data: [
+                {value : 5, name : "衬衫"},
+                {value : 20, name : "羊毛衫"},
+                {value : 36, name : "雪纺衫"},
+                {value : 10, name : "裤子"},
+                {value : 10, name : "高跟鞋"},
+                {value : 20, name : "袜子"}
+            ],
+            itemStyle: {
+                normal: {
+                    opacity: 0.5,
+                },
+            },
+        }]
+    });
+
+
+</script>
+</body>
+</html>

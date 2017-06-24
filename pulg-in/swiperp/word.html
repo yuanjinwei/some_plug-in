@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/swiper.css">
+	<style type="text/css">
+		.swiper-container{
+			width: 680px;
+		}
+		.swiper-slide>img{
+			height: 500px;
+			width: 658px;
+		}
+		.ic{
+			width: 658px;
+			margin: 20px auto;
+			background: #F0FFF0;
+			opacity: 0.5;
+			
+
+		}
+		.ic>p{
+			font-size: 20px;
+			line-height: 50px;
+			
+
+		}
+	</style>
+</head>
+<body>
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide" id="ic"><img src="images/1.jpg"> </div>
+			<div class="swiper-slide" id="ic"><img src="images/2.jpg"></div>
+			<div class="swiper-slide" id="ic"><img src="images/3.jpg"></div>
+			<div class="swiper-slide" id="ic"><img src="images/4.jpg"></div>
+		</div>
+	</div>
+	<div class="ic"></div>
+	<button id="load">点击预览</button>
+	<script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+	<script type="text/javascript" src="js/swiper.min.js"></script>
+	<script type="text/javascript">
+	// var content=$('.swiper-slide');
+	// console.log(content);
+		//初始化轮播图
+		var swiper=new Swiper('.swiper-container',{
+			auopaly:2000,
+			loop:true,
+		});
+		//向接口请求数据  
+		$.ajax({
+			type:'post',
+			url:'http://route.showapi.com/1211-1',
+			data:{
+				'showapi_appid':'39592',
+				'showapi_sign':'c78110ddac2c467b99af05e3ea24f969',
+				'count':'4'
+			},
+			success:function(result){
+				// console.log(result);
+				var getting=new Array();
+				getting=result.showapi_res_body.data;
+				for(var i=0;i<getting.length;i++){
+					var inner='<p>'+getting[i].chinese+'</p>'+'<p>'+getting[i].english+'</p>'
+
+					$('.ic').append(inner);
+				}
+				
+				
+			}
+		})
+	</script>
+</body>
+</html>

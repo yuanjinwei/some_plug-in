@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<!-- 移动相机的位置-->
+		<meta charset="UTF-8">
+		<title>WebGL中文网</title>
+		<script src="js/Three.js"></script>
+        <script src="js/Stats.js"></script>
+		<script src="js/tween.min.js"></script>
+
+		<style type="text/css">
+			div#canvas-frame {
+				border: none;
+				cursor: pointer;
+				width: 100%;
+				height: 600px;
+				background-color: #EEEEEE;
+			}
+		</style>
+		<script>
+            var renderer;
+            var stats;
+            function initThree() {
+            	//设置盒子的高度为网页可见宽高度
+                width = document.getElementById('canvas-frame').clientWidth;
+                height = document.getElementById('canvas-frame').clientHeight;
+                //设置渲染窗口 
+                renderer = new THREE.WebGLRenderer({
+                    antialias : true,
+                   // precision:"highp"//precision:highp/mediump/lowp着色精度选择
+                });
+                //设置渲染器的大小,
+                renderer.setSize(width, height);
+                //将渲染器挂在盒子
+                document.getElementById('canvas-frame').appendChild(renderer.domElement);
+                renderer.setClearColor(0xFFFFFF, 1.0);
+				//stats对象初始化
+                stats = new Stats();
+                 //绝对坐标 
+                stats.domElement.style.position = 'absolute';
+                stats.domElement.style.left = '0px';
+                stats.domElement.style.top = '0px';
+                //再把该对象挂在盒子
+                document.getElementById('canvas-frame').appendChild(stats.domElement);
+            }
+                //设置相机
+            var camera;
+            function initCamera() {
+            	//设置相机
+            	//此处为设置透视投影的相机，默认情况下，相机的上方向为Y轴，右方向为X轴，
+                //沿着Z轴垂直朝里（视野角：fov； 纵横比：aspect；
+                //	相机离视最近的距离：near； 相机离视体积最远距离：far）
+                camera = new THREE.PerspectiveCamera(40, width / height, 1, 10000);
+                //设置相机位置
+                camera.position.x = 0;
+                camera.position.y = 400;
+                camera.position.z = 600;
+                //设置相机的上为y轴方向
+                camera.up.x = 0;
+                camera.up.y = 1;
+                camera.up.z = 0;
+                //设置视野中心坐标
+                camera.lookAt({
+                    x : 0,
+                    y : 0,
+                    z : 0
+                });
+            }
+			//构建场景
+            var scene;
+            function initScene() {
+                scene = new THREE.Scene();
+            }
+			//设置光源
+            var light;
+            function initLight() {
+            	//设置光源
+                light = new THREE.AmbientLight(0xccff00);
+                //光源向量，即光源的位置
+                light.position.set(0, 500, 500);
+                //追加光源到场景
+                scene.add(light);
+
+            }
+            var cube;
+			var mesh;
+            function initObject() {
+               //形状
+				var geometry = new THREE.BoxGeometry( 100, 100, 100 );
+				
+				for ( var i = 0; i < geometry.faces.length; i += 2 ) {
+					//使用几何体对象的 faces 数组的 color 属性来渲染每一面的颜色
+					var hex = Math.random() * 0xffffff;
+					geometry.faces[ i ].color.setHex( hex );
+					geometry.faces[ i + 1 ].color.setHex( hex );
+					
+
+				}
+//				插入图片
+					var crateTexture=new THREE.ImageUtils.loadTexture('05.jpg');
+				//材质设定
+                var material = new THREE.MeshBasicMaterial( {map:crateTexture,vertexColors: THREE.FaceColors} );
+                //mesh是three.js的一个类
+                mesh = new THREE.Mesh( geometry,material);
+                //三维向量
+                mesh.position = new THREE.Vector3(0,0,0);
+                scene.add(mesh);
+				
+            }
+//			辅助网格
+			function initGrid(){
+				var helper = new THREE.GridHelper( 1000, 50 );
+				//屏幕中心会显示一个边长为1000的水平面，水平面规格为50*50
+				helper.setColors( 0x0000ff, 0x808080 );
+				scene.add( helper );
+			}
+			
+            function threeStart() {
+                initThree();
+                initCamera();
+                initScene();
+                initLight();
+
+
+                initObject();
+				initGrid();
+				
+                animation();
+
+            }
+
+            // 帧循还、游戏循还
+            function animation()
+            {
+				mesh.rotation.y +=0.01;
+                renderer.render(scene, camera);
+                requestAnimationFrame(animation);
+
+            }
+
+		</script>
+	</head>
+
+	<body onload="threeStart()">
+		<div id="canvas-frame"></div>
+	</body>
+</html>

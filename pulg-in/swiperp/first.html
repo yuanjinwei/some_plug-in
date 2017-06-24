@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>swiper认识/基本使用</title>
+	<!-- 和使用其他插件一样，我们首先需要引入相关的文件 -->
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+	<style type="text/css">
+		body{
+			background: #eee;
+			margin: 0;
+			padding: 0;
+			font-size: 20px;
+			font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+			color: #000;
+
+		}
+		.swiper-container{
+			height: 400px;
+			width: 600px;
+			background: #F0FFF0;
+			margin: 40px auto; 
+		}
+		
+		.swiper-slide{
+			 margin: 100px auto; 
+			 height: 200px;  
+			background:#FFF0F5;
+			text-align: center; 
+			line-height: 200px; 
+		}
+	</style>
+</head>
+<body>
+<!-- 基础布局 -->
+<!-- 1:swiper-container(必须);
+这个插件相当于一个轮播图的插件
+我们如果想在页面的某个位置放置一个轮播图，我们需要在它的外面放置一个容器
+并添加class="swiper-container"这个选择器，当然我们也可以给它设置一个大小 -->
+<div class="swiper-container">
+<!-- 2:swiper-wrapper(必须) 
+这个容器用来包裹需要轮播的各个小块的集合-->
+	<div class="swiper-wrapper">
+		<!-- swiper-slide(必须) 各个轮播块-->
+		<div class="swiper-slide">slide1</div>
+		<div class="swiper-slide">slide2</div>
+		<div class="swiper-slide">slide3</div>
+		<!-- data-swiper-autoplay="5000" 可以给某一个块单独设置轮播停留的的时间-->
+		<div class="swiper-slide" data-swiper-autoplay="5000">slide4</div>
+		<div class="swiper-slide">slide5</div>
+		<div class="swiper-slide">slide6</div>
+	</div><!-- swiper-wrapper -->
+	<!-- 如果需要分页器 -->
+	<div class="swiper-pagination"></div>
+	 <!-- 如果需要前进后退按钮 -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <!-- 如果需要滚动条 -->
+    <div class="swiper-scrollbar"></div>
+</div><!-- swiper-container -->
+	<script type="text/javascript" src="js/swiper.min.js"></script>
+	<!-- 初始化swiper -->
+	<script type="text/javascript">
+		var swiper = new Swiper('.swiper-container',{
+			// 设置自动轮播 可选
+			 autoplay:1000,
+			 //设置滑动速度
+			 //speed:2000, 可选
+			 //设置循环播放
+			  loop: true,
+			 //分页器
+			 pagination: '.swiper-pagination',
+			 // 如果需要前进后退按钮
+			 nextButton: '.swiper-button-next',
+			 prevButton: '.swiper-button-prev',
+			 // 如果需要滚动条
+             scrollbar: '.swiper-scrollbar',
+			//允许点击
+			 paginationClickable: true,
+			 //两个值，分别true，false 意为：用户操作swiper之后，是否禁止autoplay
+			 autoplayDisableOnInteraction : false,
+			 //同样的两个值鼠标覆盖Swiper时指针会变成手掌形状，拖动时指针会变成抓手形状。（根据浏览器形状有所不同）
+			 grabCursor:true,
+			 //设置初始索引值
+			 initialSlide:2,
+			 //设置轮播图方向
+			 //direction:'vertical',
+			 //effect 切换效果，五个值 slide
+			 //fade cube coverflow flip 一般默认为'slide'
+			 //effect:'flip',
+			 //spaceBetween设为数值slides之间的距离
+			 spaceBetween: 30,
+			 //slidesPerView:3,
+			 //设定为true时，活动块会居中，而不是默认状态下的居左。
+			 //centeredSlides:true,
+			 //在carousel mode下定义slides的数量多少为一组。
+			 //slidesPerGroup:2,
+			 //
+			 //slidesPerColumn:2,
+			 //触发条件
+			
+
+
+		});
+	</script>
+</body>
+</html>
+<!-- 1、最外层盒子可以设置宽高
+2、第二层盒子如果没有设置宽高大小默认继承父元素，
+3、第三层盒子高度自动或者自己设置，但宽度始终默认为祖父元素的宽度
+swiper.js一般选项归总
+1、autoplayStopOnLast：如果设置为true，当切换到最后一个slide时停止自动切换。反之不会（loop模式下无效）。
+2、 autoplay:1000,设置自动播放
+3、loop: true，设置循环播放
+4、			//分页器
+			 pagination: '.swiper-pagination',
+			 // 如果需要前进后退按钮
+			 nextButton: '.swiper-button-next',
+			 prevButton: '.swiper-button-prev',
+			 // 如果需要滚动条
+             scrollbar: '.swiper-scrollbar',
+5、paginationClickable: true,是否允许点击
+6、grabCursor:设置为true时，鼠标覆盖Swiper时指针会变成手掌形状，拖动时指针会变成抓手形状。（根据浏览器形状有所不同）
+7、setWrapperSize：Swiper从3.0开始使用flexbox布局(display: flex)，开启这个设定会在Wrapper上添加等于slides相加的宽高，在对flexbox布局的支持不是很好的浏览器中可能需要用到。
+8、initialSlide:设置初始化时slide的索引值
+9、direction 设置slide的滑动方向两个值  horizontal vertical
+9、autoHeight 两个值设置为true时，wrapper和container会随着当前slide的高度发生变化
+10、roundLengths 设定为true将slide的宽和高取整(四舍五入)以防止某些分辨率的屏幕上文字或边界(border)模糊。
+ 例如在1440宽度设备上，当你设定slide宽为76%时，则计算出来结果为1094.4，开启后宽度取整数1094。
+ 11、breakpoints 断点设定：根据屏幕宽度设置某参数为不同的值，类似于响应式布局的media screen。
+ 只有部分不需要变换布局方式和逻辑结构的参数支持断点设定，如slidesPerView、slidesPerGroup、 spaceBetween，而像slidesPerColumn、loop、direction、effect等则无效。
+ 例：<script>
+var swiper = new Swiper('.swiper-container', {
+  slidesPerView: 4,
+  spaceBetween: 40,
+ 
+  breakpoints: { 
+    //当宽度小于等于320
+    320: {
+      slidesPerView: 1,
+      spaceBetweenSlides: 10
+    },
+   //当宽度小于等于480
+    480: { 
+      slidesPerView: 2,
+      spaceBetweenSlides: 20
+    },
+    //当宽度小于等于640
+    640: {
+      slidesPerView: 3,
+      spaceBetweenSlides: 30
+    }
+  }
+})
+11、slidesPerView 设置slider容器能够同时显示的slides数量(carousel模式)。
+ 可以设置为number或者 'auto'则自动根据slides的宽度来设定数量。
+loop模式下如果设置为'auto'还需要设置另外一个参数loopedSlides。
+</script>
+12、freeMode：默认为false，普通模式：slide滑动时只滑动一格，并自动贴合wrapper，设置为true则变为free模式，slide会根据惯性滑动且不会贴合。
+13、freeModeMomentumfree模式动量。free模式下，若设置为false则关闭动量，释放slide之后立即停止不会滑动。
+14、freeModeMomentumRatio free模式动量值（移动惯量）。设置的值越大，当释放slide时的滑动距离越大。
+15、freeModeMomentumVelocityRatio free模式惯性速度，设置越大，释放后滑得越快。
+ -->
